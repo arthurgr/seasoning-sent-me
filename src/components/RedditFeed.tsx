@@ -32,21 +32,22 @@ export default function RedditFeed() {
   return (
     <div className="space-y-4 max-w-2xl mx-auto p-4">
       <div className="flex flex-col sm:flex-row items-center gap-2">
-        <input
-          className="border px-3 py-1 rounded w-full sm:w-auto"
-          value={subreddit}
-          onChange={(e) => setSubreddit(e.target.value)}
-          placeholder="Enter subreddit"
-        />
-        <select
-          className="border px-3 py-1 rounded"
-          value={sort}
-          onChange={(e) => setSort(e.target.value as any)}
-        >
-          <option value="hot">Hot</option>
-          <option value="new">New</option>
-          <option value="top">Top</option>
-        </select>
+      <input
+        className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white px-3 py-1 rounded w-full sm:w-auto transition-colors duration-200"
+        value={subreddit}
+        onChange={(e) => setSubreddit(e.target.value)}
+        placeholder="Enter subreddit"
+      />
+
+      <select
+        className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white px-3 py-1 rounded transition-colors duration-200"
+        value={sort}
+        onChange={(e) => setSort(e.target.value as any)}
+      >
+        <option value="hot">Hot</option>
+        <option value="new">New</option>
+        <option value="top">Top</option>
+      </select>
       </div>
 
       {loading && posts.length === 0 && <p className="text-gray-500">Loading posts...</p>}

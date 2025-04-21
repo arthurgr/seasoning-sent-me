@@ -30,16 +30,25 @@ export default function Home() {
   }, [isDarkMode]);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
-      <div className="flex justify-between p-4">
-        <h1 className="text-2xl font-bold text-center my-4">Reddit Feed</h1>
+    <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+      <div className="flex justify-between items-center p-4">
+        <h1 className="text-2xl font-bold text-center my-4">Seasoning Sent ME</h1>
+
         <button
           onClick={toggleDarkMode}
-          className="bg-gray-800 text-white p-2 rounded"
+          className="relative w-16 h-9 rounded-full bg-gray-300 dark:bg-gray-700 transition-colors duration-300 focus:outline-none"
+          title="Toggle theme"
         >
-          {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          <span className="absolute left-1 top-1 text-lg pointer-events-none">🌞</span>
+          <span className="absolute right-1 top-1 text-lg pointer-events-none">🌙</span>
+          <span
+            className={`absolute top-1 left-1 w-7 h-7 rounded-full bg-white dark:bg-black transform transition-transform duration-300 ${
+              isDarkMode ? "translate-x-7" : ""
+            }`}
+          />
         </button>
       </div>
+
       <RedditFeed />
     </main>
   );
