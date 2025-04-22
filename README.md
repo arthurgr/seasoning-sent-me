@@ -1,6 +1,6 @@
 # Seasoning Sent Me
 
-A simple Reddit feed viewer built with Vite, React, TypeScript, and Tailwind CSS. This app fetches posts from a specific subreddit and displays them with infinite scroll.
+A glorious tribute to the dustiest, most over-seasoned chips on the planet. Built for snack lovers with zero chill. 🌶️🧂🥵 #SeasoningSentMe
 
 ## Features
 
