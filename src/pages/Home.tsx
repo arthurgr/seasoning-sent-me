@@ -31,9 +31,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
-      <div className="flex justify-between items-center p-4">
+      <div className="flex justify-between items-center p-4 max-w-2xl mx-auto">
         <h1 className="text-2xl font-bold text-center my-4">Seasoning Sent ME</h1>
-
         <button
           onClick={toggleDarkMode}
           className="relative w-16 h-9 rounded-full bg-gray-300 dark:bg-gray-700 transition-colors duration-300 focus:outline-none"
@@ -48,7 +47,7 @@ export default function Home() {
           />
         </button>
       </div>
-
+      <h2 className="text-lg font-bold text-center my-2 max-w-2xl mx-auto">A glorious tribute to the dustiest, most over-seasoned chips on the planet. Built for snack lovers with zero chill. 🌶️🧂🥵 #SeasoningSentMe</h2>
       <RedditFeed />
     </main>
   );

@@ -17,12 +17,19 @@ export function useRedditFeed(subreddit: string, sort: string, query: string) {
         fetch(`https://www.reddit.com/r/${subreddit}/${sort}.json?limit=10${afterParam}${queryParam}`)
             .then((res) => res.json())
             .then((data) => {
-                const newPosts = data.data.children.map((child: any) => ({
-                    id: child.data.id,
-                    title: child.data.title,
-                    url: child.data.url,
-                    permalink: child.data.permalink,
-                }));
+                const newPosts = data.data.children.map((child: any) => {
+                    const postData = child.data;
+                    const imageUrl = postData.preview?.images[0]?.source?.url || null;  // Extract image URL
+
+                    return {
+                        id: postData.id,
+                        title: postData.title,
+                        url: postData.url,
+                        permalink: postData.permalink,
+                        selftext: postData.selftext,
+                        imageUrl,  // Add imageUrl to the post data
+                    };
+                });
 
                 setPosts((prev) => (reset ? newPosts : [...prev, ...newPosts]));
                 setAfter(data.data.after);
