@@ -9,10 +9,12 @@
     },
     "dependencies": {
         "framer-motion": "^10.16.1",
+        "lodash.debounce": "^4.0.8",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@types/lodash.debounce": "^4.0.9",
         "@types/react": "^18.2.21",
         "@types/react-dom": "^18.2.7",
         "@vitejs/plugin-react": "^4.4.0",
