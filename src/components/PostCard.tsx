@@ -17,7 +17,7 @@ export default function PostCard({ post }: Props) {
                 {post.title}
             </a>
 
-            <p>
+            <p className="break-words whitespace-normal">
                 {post.selftext}
             </p>
 
